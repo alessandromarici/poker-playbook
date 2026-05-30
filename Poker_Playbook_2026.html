@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Poker Playbook 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0c0f;
+  --s1: #111418;
+  --s2: #191d24;
+  --s3: #212730;
+  --border: #252d38;
+  --border2: #2e3948;
+  --blue: #4da6ff;
+  --blue-d: rgba(77,166,255,0.12);
+  --orange: #ff7a45;
+  --orange-d: rgba(255,122,69,0.12);
+  --gold: #ffc94d;
+  --gold-d: rgba(255,201,77,0.12);
+  --green: #3ddc84;
+  --green-d: rgba(61,220,132,0.12);
+  --red: #ff5c5c;
+  --red-d: rgba(255,92,92,0.12);
+  --text: #dde3ed;
+  --muted: #5a6880;
+  --muted2: #7a8a9a;
+  --r: 10px;
+  --nav-w: 230px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;font-size:14px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* LAYOUT */
+.shell{display:flex;min-height:100vh}
+.sidebar{width:var(--nav-w);background:var(--s1);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column;z-index:100}
+.sidebar::-webkit-scrollbar{width:3px}
+.sidebar::-webkit-scrollbar-track{background:transparent}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+.main{margin-left:var(--nav-w);flex:1;display:flex;flex-direction:column;min-height:100vh}
+
+/* BRAND */
+.brand{padding:20px 16px 16px;border-bottom:1px solid var(--border)}
+.brand-logo{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase}
+.brand-sub{font-size:11px;color:var(--muted);margin-top:3px;font-family:'IBM Plex Mono',monospace}
+
+/* NAV */
+.nav{padding:12px 8px;flex:1;display:flex;flex-direction:column;gap:2px}
+.nav-label{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:12px 8px 4px}
+.nav-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:8px;color:var(--muted2);font-size:12.5px;font-weight:500;cursor:pointer;transition:all .15s;border:1px solid transparent}
+.nav-item:hover{background:var(--s2);color:var(--text)}
+.nav-item.active{background:var(--blue-d);border-color:rgba(77,166,255,.2);color:var(--blue)}
+.nav-icon{font-size:13px;flex-shrink:0;width:18px;text-align:center}
+
+/* TOPBAR */
+.topbar{background:var(--s1);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
+.topbar-title{font-size:15px;font-weight:600;color:var(--text)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 10px;border-radius:999px;border:1px solid;letter-spacing:.05em}
+.tag-blue{background:var(--blue-d);border-color:rgba(77,166,255,.3);color:var(--blue)}
+.tag-orange{background:var(--orange-d);border-color:rgba(255,122,69,.3);color:var(--orange)}
+.tag-gold{background:var(--gold-d);border-color:rgba(255,201,77,.3);color:var(--gold)}
+
+/* CONTENT */
+.content{padding:20px 24px;max-width:900px}
+
+/* CARD */
+.card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);margin-bottom:14px;overflow:hidden}
+.card-head{padding:13px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.card-head-icon{font-size:14px}
+.card-head-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.card-body{padding:16px 18px}
+
+/* SECTION TITLE inside card */
+.section{font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.1em;margin:14px 0 8px;display:flex;align-items:center;gap:8px}
+.section::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* BULLET LIST */
+.blist{display:flex;flex-direction:column;gap:6px}
+.bitem{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.5}
+.dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.dot-blue{background:var(--blue)}
+.dot-orange{background:var(--orange)}
+.dot-gold{background:var(--gold)}
+.dot-green{background:var(--green)}
+.dot-red{background:var(--red)}
+.dot-muted{background:var(--muted)}
+
+/* HIGHLIGHT RULES */
+.rules{display:flex;flex-direction:column;gap:5px}
+.rule{padding:8px 12px;border-radius:7px;font-size:12.5px;line-height:1.45;border-left:3px solid var(--blue);background:var(--s2)}
+.rule-orange{border-left-color:var(--orange)}
+.rule-gold{border-left-color:var(--gold)}
+.rule-green{border-left-color:var(--green)}
+.rule-red{border-left-color:var(--red)}
+.rule-muted{border-left-color:var(--muted)}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{background:var(--s2);color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:8px 12px;border-bottom:1px solid rgba(37,45,56,.7);vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.015)}
+.mono{font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--gold);font-size:12px}
+
+/* BOARD GRID */
+.board-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.bc{background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:13px}
+.bc-title{font-size:11.5px;font-weight:700;color:var(--orange);margin-bottom:4px}
+.bc-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:8px}
+.bc ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.bc li{font-size:12px;line-height:1.4;color:var(--text);display:flex;gap:6px}
+.bc li::before{content:'›';color:var(--blue);font-weight:700;flex-shrink:0}
+
+/* BADGE */
+.badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:3px}
+.badge-ip{background:var(--green-d);color:var(--green);border:1px solid rgba(61,220,132,.25)}
+.badge-oop{background:var(--red-d);color:var(--red);border:1px solid rgba(255,92,92,.25)}
+.badge-gold{background:var(--gold-d);color:var(--gold);border:1px solid rgba(255,201,77,.25)}
+
+/* MOBILE */
+.mob-header{display:none;background:var(--s1);border-bottom:1px solid var(--border);padding:12px 16px;position:sticky;top:0;z-index:100}
+.mob-header-title{font-size:14px;font-weight:700;color:var(--blue)}
+.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--s1);border-top:1px solid var(--border);z-index:200;padding:6px 4px;padding-bottom:calc(6px + env(safe-area-inset-bottom));overflow-x:auto;scrollbar-width:none}
+.mob-nav::-webkit-scrollbar{display:none}
+.mob-nav-inner{display:flex;gap:2px;min-width:max-content;padding:0 4px}
+.mob-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 11px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.mob-btn .mi{font-size:15px}
+.mob-btn.active{background:var(--blue-d);color:var(--blue)}
+
+@media(max-width:768px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .topbar{display:none}
+  .mob-nav{display:flex}
+  .mob-header{display:block}
+  .content{padding:14px;padding-bottom:85px}
+  .two-col{grid-template-columns:1fr}
+  .board-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .board-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-logo">♠ Poker Playbook</div>
+    <div class="brand-sub">2026 Edition</div>
+  </div>
+  <nav class="nav" id="snav">
+    <div class="nav-label">Base</div>
+    <div class="nav-item active" data-key="regole"><span class="nav-icon">📜</span>Regole Generali</div>
+    <div class="nav-item" data-key="multy"><span class="nav-icon">👥</span>Multiway</div>
+    <div class="nav-item" data-key="player"><span class="nav-icon">🎯</span>Player HUD</div>
+    <div class="nav-item" data-key="board"><span class="nav-icon">🃏</span>Board Types</div>
+
+    <div class="nav-label">SRP</div>
+    <div class="nav-item" data-key="srp-oop-raiser"><span class="nav-icon">⬅</span>OOP Raiser (SB)</div>
+    <div class="nav-item" data-key="srp-oop-caller"><span class="nav-icon">➡</span>OOP Caller (BB)</div>
+    <div class="nav-item" data-key="srp-ip-raiser"><span class="nav-icon">📍</span>IP Raiser (BTN)</div>
+
+    <div class="nav-label">3Bet</div>
+    <div class="nav-item" data-key="3b-oop-raiser"><span class="nav-icon">🔺</span>OOP Raiser</div>
+    <div class="nav-item" data-key="3b-oop-caller"><span class="nav-icon">📞</span>OOP Caller</div>
+    <div class="nav-item" data-key="3b-ip-raiser"><span class="nav-icon">🔥</span>IP Raiser</div>
+    <div class="nav-item" data-key="3b-ip-caller"><span class="nav-icon">📞</span>IP Caller</div>
+
+    <div class="nav-label">4Bet+</div>
+    <div class="nav-item" data-key="4bet"><span class="nav-icon">💥</span>4Bet</div>
+  </nav>
+</aside>
+
+<div class="main">
+  <div class="mob-header"><div class="mob-header-title" id="mob-title">♠ Regole Generali</div></div>
+  <div class="topbar">
+    <div class="topbar-title" id="pg-title">Regole Generali</div>
+    <div class="tag tag-blue" id="pg-tag">GENERALE</div>
+  </div>
+  <div class="content" id="content"></div>
+</div>
+
+<nav class="mob-nav">
+  <div class="mob-nav-inner" id="mnav">
+    <button class="mob-btn active" data-key="regole"><span class="mi">📜</span>Regole</button>
+    <button class="mob-btn" data-key="multy"><span class="mi">👥</span>Multi</button>
+    <button class="mob-btn" data-key="player"><span class="mi">🎯</span>HUD</button>
+    <button class="mob-btn" data-key="board"><span class="mi">🃏</span>Board</button>
+    <button class="mob-btn" data-key="srp-oop-raiser"><span class="mi">⬅</span>SRP OOP R</button>
+    <button class="mob-btn" data-key="srp-oop-caller"><span class="mi">➡</span>SRP OOP C</button>
+    <button class="mob-btn" data-key="srp-ip-raiser"><span class="mi">📍</span>SRP IP R</button>
+    <button class="mob-btn" data-key="3b-oop-raiser"><span class="mi">🔺</span>3B OOP R</button>
+    <button class="mob-btn" data-key="3b-oop-caller"><span class="mi">📞</span>3B OOP C</button>
+    <button class="mob-btn" data-key="3b-ip-raiser"><span class="mi">🔥</span>3B IP R</button>
+    <button class="mob-btn" data-key="3b-ip-caller"><span class="mi">📞</span>3B IP C</button>
+    <button class="mob-btn" data-key="4bet"><span class="mi">💥</span>4Bet</button>
+  </div>
+</nav>
+</div>
+
+<script>
+const S = {
+
+regole:{title:"Regole Generali",tag:"GENERALE",tagClass:"tag-blue",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚙️</span><span class="card-head-title">Principi Fondamentali</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>Tavolo passivo → apri range più largo. Tavolo forte → stringi su value.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Giocatore aggressivo a sinistra → riduci il range di apertura.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>C-bet IP: size piccola su board dry/statici. Size grande su board wet/dinamici.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>C-bet OOP: solo con value che regge 3 strade o draw forti.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Value strong: mixa bet e check. Non bettare sempre.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Turn C-bet: scegli value già presente al flop, vantaggio di range e draw con equity.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Asso al flop: non innamorarti della mano. Se oppo chiama o rilancia ha value forte. Anche il tuo AQ diventa mano da trattare come media.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">📂</span><span class="card-head-title">Categorie di Mano</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-green"></div><span><strong>Cat 1 — Value forte (TPGK+):</strong> bettano 3 strade. Passano a Cat 2 su runout sfavorevole.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span><strong>Cat 2 — Value medio (TPBK-):</strong> check o bet piccolo al flop, ritardano una strada. Se villain non aggredisce il turn, 2nd GK+ → Cat 1.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span><strong>Cat 3 — Semibluff draw (OC, SD, FD, BD):</strong> si giocano come Cat 1. Al turn non devono chiudersi: servono per far foldare mani migliori. Al river valuta il blocker.</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span><strong>Cat 4 — Air:</strong> non si bettano. Diventano bluff solo su passività evidente di villain.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">💰</span><span class="card-head-title">Equity Minima per Call</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Size</th><th>Equity Min</th><th>Mani tipiche</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">33%</td><td>20%</td><td>Draw generico, coppie medie + BD</td></tr>
+        <tr><td class="mono">50%</td><td>25%</td><td>Draw generico, TP BK, doppia marginale</td></tr>
+        <tr><td class="mono">75%</td><td>28%</td><td>FD, Combo Draw + OC</td></tr>
+        <tr><td class="mono">100%+</td><td>33%</td><td>Draw forti, TP GK+</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">📊</span><span class="card-head-title">SPR — Stack to Pot Ratio</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>SPR</th><th>Implicazione</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">10</td><td>Serve almeno doppia coppia top per XR all-in. TPTK e draw → call.</td></tr>
+        <tr><td class="mono">5</td><td>Indifferente a metà. SPR &lt;5 → XR all-in. SPR &gt;5 → call.</td></tr>
+        <tr><td class="mono">3</td><td>TP equivale a nuts. Draw → ok per XR.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Size e Funzioni</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Size</th><th>Funzione</th><th>Obiettivo</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">33%</td><td>Range bet</td><td>Negare equity su board statici.</td></tr>
+        <tr><td class="mono">50%</td><td>Value + protezione</td><td>Costruire pot, proteggere mani vulnerabili.</td></tr>
+        <tr><td class="mono">75%</td><td>Merge / equilibrio</td><td>Pressione su range medi.</td></tr>
+        <tr><td class="mono">125%</td><td>Polarizzato</td><td>Forzare fold su mani medie.</td></tr>
+        <tr><td class="mono">175%+</td><td>Forcing</td><td>Massimo vantaggio di range / nuts.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🧠</span><span class="card-head-title">Nuts Advantage vs Range Advantage</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section">Nuts Advantage</div>
+        <div class="bitem"><div class="dot dot-gold"></div><span>Più combo nuts del villain → aumenta la <strong>size</strong>.</span></div>
+      </div>
+      <div>
+        <div class="section">Range Advantage</div>
+        <div class="bitem"><div class="dot dot-blue"></div><span>Range più forte in media → aumenta la <strong>frequenza</strong>, non la size.</span></div>
+      </div>
+    </div>
+    <div class="section">Size per Texture</div>
+    <div class="rules">
+      <div class="rule">Board secco → size piccola</div>
+      <div class="rule rule-orange">Board dinamico (draw, poche mani fatte) → size grande</div>
+      <div class="rule rule-gold">Board ultra-wet (entrambi con nuts) → riduci o rallenta (rischio XR)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🐟</span><span class="card-head-title">Exploit vs Fish — Sequenze Sizing</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Situazione</th><th>Flop → Turn → River</th></tr></thead>
+      <tbody>
+        <tr><td>Air IP</td><td class="mono">X → 66 → 150</td></tr>
+        <tr><td>Draw IP</td><td class="mono">33 → 150</td></tr>
+        <tr><td>Draw Nut IP</td><td class="mono">100 → 150</td></tr>
+        <tr><td>Air OOP</td><td class="mono">X → 66 → 66</td></tr>
+        <tr><td>Draw OOP</td><td class="mono">33 → 150</td></tr>
+        <tr><td>Draw Nut OOP</td><td class="mono">X5 → 100 → 150</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`},
+
+multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">👥</span><span class="card-head-title">Principi Base</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-green"></div><span><strong>Bet:</strong> solo con nuts / quasi nuts, o per negare equity a draw forti su board wet.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span><strong>Check OOP:</strong> mani medie e air → fold equity quasi nulla.</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span><strong>Bluff:</strong> quasi zero.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span><strong>Semi-bluff:</strong> solo draw forti (OESD, NFD).</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span><strong>Value:</strong> range molto più stretto rispetto a HU. TP marginale → check in multiway.</span></div>
+    </div>
+    <div class="section">Per Numero di Giocatori</div>
+    <div class="two-col">
+      <div>
+        <div class="section">3-Way</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-orange"></div><span>Frequenza bet ↓ su board wet</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Value minimo: TP forte / overpair su dry</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Board wet → overpair marginali = check</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section">4+ Way</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-red"></div><span>Modalità <strong>fit-or-fold</strong></span></div>
+          <div class="bitem"><div class="dot dot-muted"></div><span>Bet quasi zero</span></div>
+          <div class="bitem"><div class="dot dot-green"></div><span>Value: solo nuts (set, scala, flush)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia per Board</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">Dry (Axx, Kxx)</div><div class="bc-sub">Size: 25–33%</div><ul><li>Bet: TP forte (AK, AQ)</li><li>Check: mani medie per indurre bluff</li></ul></div>
+      <div class="bc"><div class="bc-title">Low (742, 852)</div><div class="bc-sub">Size: 33–50%</div><ul><li>Bet: set / overpair vulnerabili TT-QQ</li><li>Check: mani marginali</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired</div><div class="bc-sub">Size: small</div><ul><li>Check alta frequenza</li><li>Evita barrel senza trips+</li></ul></div>
+      <div class="bc"><div class="bc-title">Coordinati (JT9, 987)</div><div class="bc-sub">Size: 66–80%</div><ul><li>Polarizzazione estrema</li><li>Bet: scale, set</li><li>Check: TP e mani medie</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><div class="bc-sub">Size: &lt;50%</div><ul><li>Bet: nut FD / flush</li><li>Check: tutto il resto</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">📍</span><span class="card-head-title">Posizione</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section"><span class="badge badge-ip">IP</span></div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-green"></div><span>Controllo pot e realizzazione equity</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Bet solo dopo check multipli + nut advantage</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Check-back: sempre con mani medie</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Bluff river: solo se mostrano debolezza</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section"><span class="badge badge-oop">OOP</span></div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-orange"></div><span>Strategia base: check range</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Check-call: solo con equity forte</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Check-raise: rarissimo → set+</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="section">Turn & River</div>
+    <div class="two-col">
+      <div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-blue"></div><span><strong>Turn:</strong> le mani valgono meno rispetto a HU. Bet solo su blank o con nut advantage.</span></div>
+          <div class="bitem"><div class="dot dot-orange"></div><span>Draw completato → rallenta anche con Two Pair</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-orange"></div><span><strong>River:</strong> bet value serve mano quasi-nut</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Vs Check-Raise: forza enorme → fold tutto tranne nuts</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Regole Rapide</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule">Multiway + board monotone → check range</div>
+      <div class="rule rule-orange">TP marginale vs 3+ giocatori → mai bet</div>
+      <div class="rule rule-gold">Fish al tavolo → value only</div>
+      <div class="rule rule-green">Board wet + nuts → bet grande immediato</div>
+      <div class="rule rule-muted">BB multiway → difendi più tight (fold JTo, 87s vs open HJ con call SB)</div>
+    </div>
+  </div>
+</div>
+`},
+
+"srp-oop-raiser":{title:"SRP OOP Raiser (SB)",tag:"SRP",tagClass:"tag-orange",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Principi Flop</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span><strong>Bet default 33%</strong> specie su board che avvantaggiano OR, con value Cat 1 e draw Cat 3.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Bilancia inserendo alcune mani Cat 1 nel check per non essere prevedibile (doppia, set, scala).</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span>Air e mani medie senza backdoor → check.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Board coordinati: tendenzialmente xraisati da oppo. Bet con valore da proteggere (QQ, TT). Trapola il value strong (KK+).</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Evita di ingrossare il pot OOP se non sei strong. Se oppo xr: call TP e draw veramente forti.</span></div>
+    </div>
+    <div class="section">Frequenze C-bet</div>
+    <table>
+      <thead><tr><th>Size</th><th>Quando</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">33%</td><td>Default. Board dry/statici, board high con range advantage.</td></tr>
+        <tr><td class="mono">66–75%</td><td>Board wet/coordinati, strategia polarizzata (usare poco).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia per Board</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">High (Kxx, Qxx)</div><ul><li>C-bet frequente</li><li>Check back: mani medie / no backdoor</li><li>Su Ahigh: cbet molto meno</li></ul></div>
+      <div class="bc"><div class="bc-title">Low (8-high o meno)</div><ul><li>GTO: check quasi 100%</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired</div><ul><li>High paired: cbet ~100% small, meglio rainbow</li><li>Low paired: più check</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Check frequente con FD medi</li><li>Bet con FD bassi/forti</li><li>Turn 4-flush → blockbet protezione</li></ul></div>
+      <div class="bc"><div class="bc-title">Coordinati (QJ8, 987)</div><ul><li>Cbet meno spesso, size grande</li><li>QQ–TT → bet protezione</li><li>AA/KK → trap mix</li><li>XR → Set/combo draw per punire bet</li></ul></div>
+      <div class="bc"><div class="bc-title">Middle (T98, 976)</div><ul><li>Favoriscono BB</li><li>Gioco più passivo</li><li>Value forte (TwoPair+, OESD) → linea polarizzata</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Turn</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>Block bet su board scary/wet per prendere info.</span></div>
+      <div class="bitem"><div class="dot dot-green"></div><span>Bet value forte Cat 1, draw e value medio max 2nd pair con equity al turn.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Overbet se hai netto vantaggio di range, nut FD o combo draw.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Bluff dopo check: anche 75% per giocare la fold equity, oppure solito 33%. No value showdown, no block bluff di oppo.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🏁</span><span class="card-head-title">River</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-green"></div><span>Value bet se oppo cappato.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Overbet vs debolezza mostrata al turn, anche con 2nd pair.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Bluff catch: solo TP+.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Bet tre strade OPPO di solito = troppa forza, specie se XR.</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span>FD mancati: pessimi candidati per bluff tre strade OOP.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Regole Rapide</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule">Over-cbet su board BB-favored → errore comune</div>
+      <div class="rule rule-orange">Bluff con FD → blocchi fold oppo. Evita.</div>
+      <div class="rule rule-gold">Bluff senza piano per il turn → evita</div>
+      <div class="rule rule-muted">Non togliere value forte dal range check flop, serve per bilanciare (trap)</div>
+    </div>
+  </div>
+</div>
+`},
+
+"srp-oop-caller":{title:"SRP OOP Caller (BB)",tag:"SRP",tagClass:"tag-orange",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Principi Base</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>Gioca aggressivo specie vs bet piccolo: tanto XR, frequenza 17–18%.</span></div>
+      <div class="bitem"><div class="dot dot-green"></div><span>XR con value forte Cat 1 e draw Cat 3.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Mani da XR: BDFD/BDST + TPTK alto/basso, OC K/Q con BDFD/BDST, Bottom/Pocket con BDFD + BDSD, doppia+.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Sempre attenzione al board: in generale più equity = più aggressività, specie su board favorevoli.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">📞</span><span class="card-head-title">Call al Flop</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>Call con value medio + draw BD possibilmente. Se non migliorano al turn → fold subito o cerca di arrivare gratis al river.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia per Board</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">Dry (Axx, Kxx)</div><ul><li>Difesa passiva (advantage oppo)</li><li>XC: TP medio + BDFD / OC+BD</li><li>Vs REG: XR value forte per protezione e bluff draw no VSD su size piccole</li><li>Vs FISH: overfold vs size grandi (&gt;75%)</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired High (AAx, KKx)</div><ul><li>Check range</li><li>Call coppie medie / Ah raro</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired Low (88x-)</div><ul><li>BB ha nut advantage</li><li>XR ~30%: Trips, coppie vulnerabili + bluff scala BDFD x2.5</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Call con value. Senza draw forte → fold vs size grandi</li><li>XR con draw bassi, no VSD x2.5</li></ul></div>
+      <div class="bc"><div class="bc-title">Coordinati / Draw-heavy</div><ul><li>FD → call medio, XR low/high polar x4.5</li><li>OESD → mix call / raise</li><li>Value SD: pot control fino al river</li><li>Two pair vulnerabili su WET → call</li></ul></div>
+      <div class="bc"><div class="bc-title">Low (642, 753)</div><ul><li>Favoriscono BB</li><li>XR: OP basse, mani medie (55–88), double GS e combo draw x4.5</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Turn</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>Se hai XR: continua su molte draw, prepara il terreno con la size giusta se decidi di andare all-in.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Block bet per info: specie su turn che chiudono draw.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Su A/K al turn: tanto check.</span></div>
+      <div class="bitem"><div class="dot dot-red"></div><span>Se oppo re-raise: all-in solo con nuts assoluti e combo draw mostruosi, altrimenti fold.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🏁</span><span class="card-head-title">River</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>Hai già preparato la giocata al turn.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Bluff tre strade: FD mancati pessimi candidati (non bloccano fold oppo).</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Il bluff non deve bloccare i fold di oppo.</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span>In call: occhio che nessuno betta tre strade senza valore, specie su board high al nostro livello.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Linee Exploit</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule rule-green">Vs REG: vs size piccole → aumenta frequenza XR. MDF non è vincolante.</div>
+      <div class="rule rule-orange">Combo XR: BDFD/BDST + TP forte/basso + K/Q BDFL/ST + Bottom/2nd Pair BDFS/ST su DRY + UP BDFD + OC BDFS/ST.</div>
+      <div class="rule">Vs Calling Station: bluffa meno, value thin.</div>
+      <div class="rule rule-gold">Vs Nit: fold anche TP deboli.</div>
+      <div class="rule rule-red">Vs Maniac: check-call con 2pair+ → lasciali bluffare.</div>
+    </div>
+  </div>
+</div>
+`},
+
+"srp-ip-raiser":{title:"SRP IP Raiser (BTN)",tag:"SRP",tagClass:"tag-orange",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Principi Flop</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>C-bet molto frequente specie su board nostro. Attenzione ai board low e coordinati, adatti a XR per oppo.</span></div>
+      <div class="bitem"><div class="dot dot-green"></div><span>Value forte e draw: bettano flop e turn (75% o OB con netto vantaggio).</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span>Value medio-basso senza BD: check, così come air.</span></div>   
+    </div>
+    <div class="section">Vs XR</div>
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>Call: bottom pair BDFD e draw importanti. Fold il resto.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Vs Fish: fast play e bet grandi con value se calling station. Pochi bluff.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia per Board</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><div class="bc-sub">Size: 25–33% · Freq: 70–100%</div><ul><li>Value + bluff backdoor</li><li>Check: aria senza backdoor</li></ul></div>
+      <div class="bc"><div class="bc-title">Low (742r)</div><div class="bc-sub">Size: 50–75% · Freq: 30–40%</div><ul><li>Check molto → BB advantage</li><li>Bet forte: overpair + draw forti</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired High (KKx)</div><div class="bc-sub">Size: 25–33% · Freq: 100%</div><ul><li>Range bet totale</li><li>BB overfolda → barrel turn/river</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired Low (88x)</div><div class="bc-sub">Size: 33% · Freq: ~50%</div><ul><li>Check back: AA/KK e trips deboli</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Check frequente</li><li>Check back flush bassi</li><li>Turn 4-flush → bet flush medi+</li></ul></div>
+      <div class="bc"><div class="bc-title">Coordinati (J86, 987)</div><div class="bc-sub">Size: 55–80% · Freq: 40–50%</div><ul><li>Strategia polarizzata</li><li>Check alcune overpair vulnerabili</li></ul></div>
+      <div class="bc"><div class="bc-title">Middle (T95, 976)</div><ul><li>Favoriscono BB</li><li>Check più spesso AA che QQ</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Turn & River</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section">Turn</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-gold"></div><span>Barrel 2nd Pair+ su blank o scare card (A/K) → size 66–75%.</span></div>
+          <div class="bitem"><div class="dot dot-green"></div><span>Overbet quando hai nut advantage o range villain è capped.</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Delayed cbet 75% dopo check flop: usa draw, backdoor o air senza showdown value.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section">River</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-orange"></div><span>Bluff: non bloccare i draw mancati di villain.</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Bluff catch: TP+ (2nd pair su overcard al river).</span></div>
+          <div class="bitem"><div class="dot dot-muted"></div><span>No bluff con FD mancati.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Regole Rapide</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule">Over-cbet su board favorevoli al BB → errore comune</div>
+      <div class="rule rule-orange">Bluff senza equity → evita sempre</div>
+      <div class="rule">Non bluffare quando villain ha già investito molto</div>
+      <div class="rule rule-gold">Size eccessiva senza motivazione chiara → evita</div>
+    </div>
+  </div>
+</div>
+`},
+
+"3b-oop-raiser":{title:"3Bet OOP Raiser (SB)",tag:"3BET",tagClass:"tag-gold",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Principi Base</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-gold"></div><span>Range Advantage: SB ha AA, KK, AK → vantaggio nuts netto.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Villain IP realizza equity meglio → pressione su SB su board neutrali e bassi.</span></div>      
+      <div class="bitem"><div class="dot dot-blue"></div><span>C-bet frequente 15–25%, cat 1/3 SRP basso.</span></div>
+      <div class="bitem"><div class="dot dot-red"></div><span>Errore comune: cbet 100% su board medi/bassi o bluff senza BDFL/ST. Prendi free card con OC no BD.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop per Board</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><div class="bc-sub">Freq: 80–100% · Size: 15–25%</div><ul><li>Range bet quasi totale</li></ul></div>
+      <div class="bc"><div class="bc-title">Double Broadway (KQx, QJx)</div><div class="bc-sub">Freq: 100% · Size: 33%</div><ul><li>Range advantage netto</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired High (AAx, KKx)</div><div class="bc-sub">Freq: ~100% · Size: 25–33%</div><ul><li>Range bet alta frequenza</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired Low (88x-)</div><div class="bc-sub">Freq: ~50%</div><ul><li>Mix check/bet</li><li>IP ha più trips</li></ul></div>
+      <div class="bc"><div class="bc-title">Low (832, 742)</div><div class="bc-sub">Freq: 30–40% · Size: 33%</div><ul><li>Bet: 99–QQ</li><li>Check: AA/KK (protezione)</li></ul></div>
+      <div class="bc"><div class="bc-title">Coordinati (JT9, 987)</div><div class="bc-sub">Size: 66–100%</div><ul><li>Strategia polarizzata</li><li>Checka AA/KK BDFD</li><li>XR solo nuts</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><div class="bc-sub">Freq: bassa · Size: 25–33%</div><ul><li>Check anche flush (protezione)</li></ul></div>
+      <div class="bc"><div class="bc-title">Middle (975, 864)</div><ul><li>Favoriscono IP</li><li>Check AA/KK più spesso di JJ</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Turn</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-blue"></div><span>Devi fare più controllo e check, ma spesso continui la pressione con strong e draw.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Vs reg aggro: puoi checkare strong ogni tanto per proteggere da XR.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Se oppo XR: difendi nuts o draw tanta equity con re-raise: all-in.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Delayed cbet 33% con air e no value SD per giocarti fold equity.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🏁</span><span class="card-head-title">River</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-gold"></div><span>Block bet con value medio 40–50% su debolezza oppo che pensi di battere.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Hai già preparato al turn cosa fare.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Evita bluff con FD mancati.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Bluff catch: TP+.</span></div>
+    </div>
+  </div>
+</div>
+`},
+
+"3b-oop-caller":{title:"3Bet OOP Caller (BB)",tag:"3BET",tagClass:"tag-gold",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Principi Base</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-red"></div><span>Svantaggio strutturale: range più debole + fuori posizione.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>SPR basso: TPTK spesso stack-off.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Simile a IP caller ma più fold da OOP.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Aggressivo con draw bila, FD alti e bassi, pocket BD ST, GS+BDFD e TP forti.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Proteggi il check con value forte per bilanciare. Valuta sempre il board e chi favorisce.</span></div>
+      <div class="bitem"><div class="dot dot-red"></div><span>Errore comune: call troppo larghi o zero XR su board bassi.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop: Check 100% Range</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><ul><li>Check-fold / call stretto</li><li>Continua con TP e BDFD</li></ul></div>
+      <div class="bc"><div class="bc-title">Low (753, 642)</div><ul><li>Nut advantage OOP</li><li>Check-raise aggressivo</li><li>SET/doppia + draw forti</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired Low (774, 552)</div><ul><li>Mix call / raise</li><li>Difendi overcard + BDFD</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired High (AAx/KKx)</div><ul><li>Call selettivo</li><li>Fold broadway missate e pocket basse</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Fold vs size grandi senza FD</li><li>Call FD nut / medi</li></ul></div>
+      <div class="bc"><div class="bc-title">Middle (T85, 976)</div><ul><li>Difesa aggressiva</li><li>XR con draw forti e set</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Turn & River</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section">Turn</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-orange"></div><span>Fold se non hai intenzione di fare call river e hai poca equity.</span></div>
+          <div class="bitem"><div class="dot dot-green"></div><span>Spesso XR all-in con draw forti e value strong (SPR basso).</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Se XR flop: spesso all-in al turn con value e draw strong.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section">River</div>
+        <div class="blist">          
+          <div class="bitem"><div class="dot dot-orange"></div><span>No bluff con FD mancati.</span></div>
+          <div class="bitem"><div class="dot dot-gold"></div><span>Block bet 40–50% con value medio su debolezza oppo.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`},
+
+"3b-ip-raiser":{title:"3Bet IP Raiser (CO/BTN)",tag:"3BET",tagClass:"tag-gold",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Principi Base</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-green"></div><span>Posizione: realizzi meglio equity + controllo del pot.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Range Advantage: AA, KK, AK → edge su board high.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>SPR basso: stack-off naturale entro il river. Si è spesso committati.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Occhio ai soliti board wet, coordinati e low.</span></div>
+      <div class="bitem"><div class="dot dot-red"></div><span>Errore comune: under-cbet su board favorevoli.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><div class="bc-sub">Size: 25–33% · Freq: 95–100%</div><ul><li>Range bet quasi totale</li></ul></div>
+      <div class="bc"><div class="bc-title">Low (raggy)</div><div class="bc-sub">Size: 25–33% · Freq: bassa/media</div><ul><li>Bet: 99–JJ (protezione)</li><li>Check: AA/KK (induzione)</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired High</div><div class="bc-sub">Size: 25–33% · Freq: 100%</div><ul><li>Range bet totale</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired Low</div><div class="bc-sub">Size: 25–33% · Freq: media</div><ul><li>Bet: Trip deboli + OP in mix</li></ul></div>
+      <div class="bc"><div class="bc-title">Coordinati (JT9, 987)</div><div class="bc-sub">Size: 33–50% · Freq: ~80%</div><ul><li>Bet: draw + TP forte</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><div class="bc-sub">Freq: bassa</div><ul><li>Size: 33% o check</li><li>Check: flush bassi</li></ul></div>
+      <div class="bc"><div class="bc-title">Middle (T85, 976)</div><div class="bc-sub">Size: ~50% · Freq: media</div><ul><li>Proteggi equity vs OC</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔧</span><span class="card-head-title">Costruzione Range</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-green"></div><span><strong>Value forte e draw:</strong> spingono sempre. Turn: scary → proteggi TP deboli con check su wet.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span><strong>Bluff:</strong> bila, FD, BD forti + blocker Ax e OC.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span><strong>Vs XR:</strong> call TPTK e combo draw+. Vs reg: check ogni tanto value forte su board non scary per bilanciare.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span><strong>Vs Fish:</strong> fast play.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Turn & River</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section">Turn</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-blue"></div><span>Value medio: check. Value forte: pressing ancora.</span></div>
+          <div class="bitem"><div class="dot dot-gold"></div><span>Draw che completa: rallenta, prendi info.</span></div>
+          <div class="bitem"><div class="dot dot-orange"></div><span>Bluff: FD bassi e alti. I medi free card.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section">River</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-blue"></div><span>Hai già pensato al turn. SPR basso spesso all-in, value o bluff.</span></div>
+          <div class="bitem"><div class="dot dot-orange"></div><span>No bluff con FD mancati.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Regole Rapide</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule rule-green">Axx/Kxx → cbet 33% range quasi totale</div>
+      <div class="rule rule-orange">876/765 → check molto</div>
+      <div class="rule rule-gold">Set → bet subito</div>
+      <div class="rule">TPTK → bet-bet-AI su board safe</div>
+      <div class="rule">AA/KK su raggy → check back flop</div>
+      <div class="rule rule-orange">Vs Fish raise → fold tutto tranne nuts</div>
+    </div>
+  </div>
+</div>
+`},
+
+"3b-ip-caller":{title:"3Bet IP Caller",tag:"3BET",tagClass:"tag-gold",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Principi Base</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-orange"></div><span>Range disadvantage: villain ha più premium (JJ+, AK).</span></div>
+      <div class="bitem"><div class="dot dot-green"></div><span>Posizione: realizzi meglio l'equity. IP difende più largamente rispetto a OOP.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>SPR basso: TPTK spesso è stack-off.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Fast play con Two Pair+. Value medio: call 1 strada vs size piccole meglio se BD.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Su size grandi: folda di più, ci deve essere equity.</span></div>
+      <div class="bitem"><div class="dot dot-red"></div><span>Errori comuni: call 3bet con piccole coppie (22–55) vs sizing 3x+; overfold vs cbet small.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">High Dry (Axx, Kxx)</div><ul><li>Call largo vs size piccole</li><li>Difendi: coppie, GS, A/K high</li></ul></div>
+      <div class="bc"><div class="bc-title">Low (753, 642)</div><ul><li>Favoriscono IP</li><li>Raise: TP forte / overpair vs bet small</li><li>Call: underpair + backdoor</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired High (AAx, KKx)</div><ul><li>Call passivo</li><li>Fold aria senza equity</li><li>Raise quasi mai</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired Low (774, 552)</div><ul><li>IP ha più trips</li><li>Aggressione maggiore</li><li>Difendi overcard + backdoor FD</li></ul></div>
+      <div class="bc"><div class="bc-title">Coordinati (JT9, 987)</div><ul><li>Mix call / raise</li><li>Raise: combo-draw forti</li><li>Call: TP + equity</li><li>Check back mani forti vs check</li></ul></div>
+      <div class="bc"><div class="bc-title">Middle (T85, 976)</div><ul><li>Call con coppie medie</li><li>Rivaluta turn</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Fold selettivo vs size grandi</li><li>Call flush piccoli per indurre bluff</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔧</span><span class="card-head-title">Vs C-Bet</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Size C-Bet</th><th>Azione</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">25–33% (board tuo)</td><td>Difendi largo: pocket pair basse BD, Ace-high BDFD, BDGS; FD medi.</td></tr>
+        <tr><td class="mono">25–33% (board oppo)</td><td>Fold anche value medio BDFD.</td></tr>
+        <tr><td class="mono">66%+</td><td>Continua solo con TP+ / draw forti.</td></tr>
+        <tr><td class="mono">Raise bluff</td><td>FD alti e bassi. Mossa avanzata: marge raise con coppie medie.</td></tr>
+      </tbody>
+    </table>
+    <div class="section" style="margin-top:12px">Vs Debolezza (check)</div>
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-gold"></div><span>Stab 33% sempre vs doppio check.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Turn & River</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section">Turn</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-blue"></div><span>TP+ e draw forti: continua. Resto: fold.</span></div>
+          <div class="bitem"><div class="dot dot-green"></div><span>Attacca con strong.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section">River</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-green"></div><span>Value thin se debolezza e barrel oppo.</span></div>
+          <div class="bitem"><div class="dot dot-orange"></div><span>Bluff: solo no value showdown + Ax blocker.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Regole Rapide</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule rule-green">Axx vs tiny bet → difendi larghissimo (qualsiasi coppia, BD forte)</div>
+      <div class="rule">Board basso tiny bet → raise TP forte. Call: 22+, bottom pair, BD forte.</div>
+      <div class="rule rule-gold">Set → mix slowplay/raise spesso</div>
+      <div class="rule">Turn check → stab 33–50% con TP marginali o draw</div>
+      <div class="rule rule-orange">Vs flop 3bet (re-raise) → fold quasi tutto</div>
+      <div class="rule rule-green">Draw completato + check → bet grande e OB se nut advantage</div>
+    </div>
+  </div>
+</div>
+`},
+
+"4bet":{title:"4Bet",tag:"4BET+",tagClass:"tag-gold",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">💥</span><span class="card-head-title">Principi Base</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-green"></div><span>Value forte: fast play sempre. No bluff in linea di massima.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>SPR basso: facilita lo stack-off.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Posizione: IP → più controllo. OOP → più pressione con AKo (shove).</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Deep stack (150bb+): 4bet meno, call di più con QQ e AK. Sfrutta lo svantaggio di posizione di villain.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔧</span><span class="card-head-title">Costruzione Range</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section">Value</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-green"></div><span>Standard: QQ+, AK. JJ vs CO/BTN a volte.</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Vs Nit: KK+</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>OOP: JJ/TT buone candidate.</span></div>
+          <div class="bitem"><div class="dot dot-gold"></div><span>Vs loose: aggiungi JJ, AQ.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section">Bluff</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-orange"></div><span>Blocker: Axs (A5s–A2s), Kxs.</span></div>
+          <div class="bitem"><div class="dot dot-blue"></div><span>Broadway: AJo, KQo.</span></div>
+          <div class="bitem"><div class="dot dot-red"></div><span>NO trash senza blocker.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">📏</span><span class="card-head-title">Sizing</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Posizione</th><th>Size</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-ip">IP</span></td><td class="mono">~2.2× del 3bet</td></tr>
+        <tr><td><span class="badge badge-oop">OOP</span></td><td class="mono">~2.7×–3×+</td></tr>
+        <tr><td><span class="badge badge-gold">Fish</span></td><td class="mono">Size più grande</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Vs 5Bet</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-green"></div><span>Stack-off: QQ+, AK.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Vs Nit: fold anche QQ/AK.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Vs aggro: allarga il call.</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span>Bluff 4bet → fold sempre vs 5bet.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Regole Rapide</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule rule-gold">AKo OOP (100bb) → spesso 4bet/shove</div>
+      <div class="rule rule-orange">Vs Fish → solo value, no bluff</div>
+      <div class="rule">Vs Nit &lt;5% 3bet → KK+</div>
+      <div class="rule rule-green">Axs → bluff ideale</div>
+      <div class="rule">Villain overfold → bluffa di più</div>
+      <div class="rule">Board Ace-High in pot 4bettato → size tiny (20% pot)</div>
+      <div class="rule rule-orange">Deep stack → più call AK/QQ, meno guerra</div>
+    </div>
+  </div>
+</div>
+`},
+
+player:{title:"Player HUD",tag:"READS",tagClass:"tag-blue",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">📊</span><span class="card-head-title">HUD — Valori di Riferimento</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Stat</th><th>Valore ideale / Range</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">VPIP</td><td>20–30% (ideale: 25%)</td></tr>
+        <tr><td class="mono">PFR</td><td>15–25% (ideale: 19%)</td></tr>
+        <tr><td class="mono">AGG%</td><td>&lt;10% passivo · 10–20% medio · 20–35% aggressivo · &gt;35% molto aggro</td></tr>
+        <tr><td class="mono">AF</td><td>&lt;2 passivo · 2–3 medio · &gt;3 aggressivo · &gt;4 molto aggro</td></tr>
+        <tr><td class="mono">Flop CBET IP</td><td>50–70%</td></tr>
+        <tr><td class="mono">Flop CBET OOP</td><td>0–30%</td></tr>
+        <tr><td class="mono">Fold CBET</td><td>&lt;50% normale · Alto → overfolder</td></tr>
+        <tr><td class="mono">XR%</td><td>13–15%</td></tr>
+        <tr><td class="mono">Turn CBET IP</td><td>45%</td></tr>
+        <tr><td class="mono">Turn CBET OOP</td><td>35%</td></tr>
+        <tr><td class="mono">River CBET IP</td><td>60%</td></tr>
+        <tr><td class="mono">River CBET OOP</td><td>50%</td></tr>
+        <tr><td class="mono">3BET%</td><td>6–10% (ideale: 8%)</td></tr>
+        <tr><td class="mono">Fold to 3BET IP</td><td>40–45%</td></tr>
+        <tr><td class="mono">Fold to 3BET OOP</td><td>45–50%</td></tr>
+        <tr><td class="mono">Fold to 4BET</td><td>&gt;60% → bluffa di più</td></tr>
+        <tr><td class="mono">WTSD</td><td>27–32% · &lt; → overfolder · &gt; → overcaller</td></tr>
+        <tr><td class="mono">W$SD</td><td>49–54% · &lt; → troppi call neg. o bluff · &gt; → solo value</td></tr>
+        <tr><td class="mono">WWSF</td><td>45–53% · &lt; → no bluff · &gt; → overbluffer</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Profili Player</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">Nit</div><div class="bc-sub">WTSD &lt;28% · WWSF &lt;47%</div><ul><li>Exploit: bluff aggressivo</li><li>Apre poco → call/bet stretto (QQ+, AK)</li><li>Folda alle 3bet → bluff suited (A2s+, K6s+)</li><li>Fold CBET &gt;50% → aggredisci</li></ul></div>
+      <div class="bc"><div class="bc-title">LAG</div><div class="bc-sub">AGG% alto · WWSF alto</div><ul><li>Chiama più bluff</li><li>Paga anche con valore marginale</li></ul></div>
+      <div class="bc"><div class="bc-title">Regular</div><div class="bc-sub">WTSD 30 · W$SD 50 · WWSF 49</div><ul><li>Gioco equilibrato</li><li>Letture affidabili</li></ul></div>
+      <div class="bc"><div class="bc-title">Calling Station</div><div class="bc-sub">WTSD alto · W$SD basso</div><ul><li>Zero bluff</li><li>Value large sempre</li><li>No trap, bet diretto</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Pattern Reads</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule">Check-fold frequente → float al flop e ruba il turn</div>
+      <div class="rule rule-orange">Check frequente → è debole, aggredisci</div>
+      <div class="rule rule-gold">Betta 3 strade → difficile farlo foldare</div>
+      <div class="rule rule-green">4bet &lt;2.3% → fold tutto tranne QQ+ / AK</div>
+    </div>
+  </div>
+</div>
+`},
+
+board:{title:"Board Types",tag:"READS",tagClass:"tag-blue",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia per Texture di Board</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">Disconnessi / Twotone Disc.</div><div class="bc-sub">es: K74r, A94r</div><ul><li>Raiser: cbet merged ad alta freq (value, marginali, bluff)</li><li>Caller: call con OC + BDFD. XR più spesso.</li></ul></div>
+      <div class="bc"><div class="bc-title">Accoppiati</div><ul><li>C-bet piccola ad alta frequenza</li></ul></div>
+      <div class="bc"><div class="bc-title">Connessi Rainbow</div><div class="bc-sub">es: J96r</div><ul><li>Raiser: size 50–66%, range polarizzato</li><li>Caller: call largo vs bet thin. XR con GS + BD equity.</li></ul></div>
+      <div class="bc"><div class="bc-title">Twotone Connessi</div><ul><li>Raiser: cbet polarizzata 50–66%</li><li>Caller BB: call stretto. XR con draw forti (bilaterale, GS+BDFD)</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><ul><li>C-bet solo value forti (set, flush)</li><li>Check tutto il resto</li><li>Call con BDFD. Evita bluff.</li></ul></div>
+    </div>
+  </div>
+</div>
+`}
+
+};
+
+function render(key){
+  const s=S[key];
+  if(!s)return;
+  document.getElementById('content').innerHTML=s.html;
+  document.getElementById('pg-title').textContent=s.title;
+  document.getElementById('mob-title').textContent='♠ '+s.title;
+  const tag=document.getElementById('pg-tag');
+  tag.textContent=s.tag;
+  tag.className='tag '+s.tagClass;
+  document.querySelectorAll('#snav .nav-item').forEach(el=>el.classList.toggle('active',el.dataset.key===key));
+  document.querySelectorAll('#mnav .mob-btn').forEach(el=>el.classList.toggle('active',el.dataset.key===key));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+document.getElementById('snav').addEventListener('click',e=>{
+  const el=e.target.closest('[data-key]');
+  if(el)render(el.dataset.key);
+});
+document.getElementById('mnav').addEventListener('click',e=>{
+  const el=e.target.closest('[data-key]');
+  if(el)render(el.dataset.key);
+});
+
+render('regole');
+</script>
+</body>
+</html>
