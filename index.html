@@ -215,12 +215,15 @@ regole:{title:"Regole Generali",tag:"GENERALE",tagClass:"tag-blue",html:`
   <div class="card-body">
     <div class="blist">
       <div class="bitem"><div class="dot dot-blue"></div><span>Tavolo passivo → apri range più largo. Tavolo forte → stringi su value.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Impara a riconoscere il range di oppo: da eraly ha meno combo off e + parte alta e suited, late più combo off e quindi potenzialmente più doppie coppie su determinati spot. Ragiona sempre su le tre starde anche quando non giochi la mano.</span></div>
       <div class="bitem"><div class="dot dot-orange"></div><span>Giocatore aggressivo a sinistra → riduci il range di apertura.</span></div>
-      <div class="bitem"><div class="dot dot-blue"></div><span>C-bet IP: size piccola su board dry/statici. Size grande su board wet/dinamici.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>C-bet Flop: usa la size in base a ciò che vuoi ottenere non limitarti alla startegia small o big.</span></div>
       <div class="bitem"><div class="dot dot-blue"></div><span>C-bet OOP: solo con value che regge 3 strade o draw forti.</span></div>
-      <div class="bitem"><div class="dot dot-gold"></div><span>Value strong: mixa bet e check. Non bettare sempre.</span></div>
-      <div class="bitem"><div class="dot dot-blue"></div><span>Turn C-bet: scegli value già presente al flop, vantaggio di range e draw con equity.</span></div>
+      <div class="bitem"><div class="dot dot-gold"></div><span>Value strong: mixa bet e check. Non bettare sempre. Proteggi il range di check flop/turn</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span>Turn C-bet: scegli value già presente al flop, vantaggio di range e draw con equity. Se accoppia o draw chiuso control pot check/blockbet</span></div>
       <div class="bitem"><div class="dot dot-orange"></div><span>Asso al flop: non innamorarti della mano. Se oppo chiama o rilancia ha value forte. Anche il tuo AQ diventa mano da trattare come media.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Deep stack vs deep tendi a controllare il pot dal preflop.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>River poco bluffati da oppo: accoppiato, 4 fl/st board, monotone.</span></div>
     </div>
   </div>
 </div>
@@ -329,7 +332,7 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
     <div class="blist">
       <div class="bitem"><div class="dot dot-green"></div><span><strong>Bet:</strong> solo con nuts / quasi nuts, o per negare equity a draw forti su board wet.</span></div>
       <div class="bitem"><div class="dot dot-blue"></div><span><strong>Check OOP:</strong> mani medie e air → fold equity quasi nulla.</span></div>
-      <div class="bitem"><div class="dot dot-muted"></div><span><strong>Bluff:</strong> quasi zero.</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span><strong>Bluff:</strong> quasi zero. Più Squeeze/Iso piuttosto</span></div>
       <div class="bitem"><div class="dot dot-orange"></div><span><strong>Semi-bluff:</strong> solo draw forti (OESD, NFD).</span></div>
       <div class="bitem"><div class="dot dot-gold"></div><span><strong>Value:</strong> range molto più stretto rispetto a HU. TP marginale → check in multiway.</span></div>
     </div>
@@ -701,7 +704,7 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
       <div class="bitem"><div class="dot dot-red"></div><span>Svantaggio strutturale: range più debole + fuori posizione.</span></div>
       <div class="bitem"><div class="dot dot-orange"></div><span>SPR basso: TPTK spesso stack-off.</span></div>
       <div class="bitem"><div class="dot dot-blue"></div><span>Simile a IP caller ma più fold da OOP.</span></div>
-      <div class="bitem"><div class="dot dot-orange"></div><span>Aggressivo con draw bila, FD alti e bassi, pocket BD ST, GS+BDFD e TP forti.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span>Aggressivo con draw bila, FD alti e bassi, pocket BD ST, TP forti.</span></div>
       <div class="bitem"><div class="dot dot-gold"></div><span>Proteggi il check con value forte per bilanciare. Valuta sempre il board e chi favorisce.</span></div>
       <div class="bitem"><div class="dot dot-red"></div><span>Errore comune: call troppo larghi o zero XR su board bassi.</span></div>
     </div>
@@ -712,9 +715,9 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
   <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop: Check 100% Range</span></div>
   <div class="card-body">
     <div class="board-grid">
-      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><ul><li>Check-fold / call stretto</li><li>Continua con TP e BDFD</li></ul></div>
+      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><ul><li>Check-fold / call stretto</li><li>Continua con TP e value + BDFD</li></ul></div>
       <div class="bc"><div class="bc-title">Low (753, 642)</div><ul><li>Nut advantage OOP</li><li>Check-raise aggressivo</li><li>SET/doppia + draw forti</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired Low (774, 552)</div><ul><li>Mix call / raise</li><li>Difendi overcard + BDFD</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired Low (774, 552)</div><ul><li>Mix call / raise</li><li>Difendi draw forti+</li></ul></div>
       <div class="bc"><div class="bc-title">Paired High (AAx/KKx)</div><ul><li>Call selettivo</li><li>Fold broadway missate e pocket basse</li></ul></div>
       <div class="bc"><div class="bc-title">Monotone</div><ul><li>Fold vs size grandi senza FD</li><li>Call FD nut / medi</li></ul></div>
       <div class="bc"><div class="bc-title">Middle (T85, 976)</div><ul><li>Difesa aggressiva</li><li>XR con draw forti e set</li></ul></div>
@@ -783,6 +786,7 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
       <div class="bitem"><div class="dot dot-orange"></div><span><strong>Bluff:</strong> bila, FD, BD forti + blocker Ax e OC.</span></div>
       <div class="bitem"><div class="dot dot-gold"></div><span><strong>Vs XR:</strong> call TPTK e combo draw+. Vs reg: check ogni tanto value forte su board non scary per bilanciare.</span></div>
       <div class="bitem"><div class="dot dot-blue"></div><span><strong>Vs Fish:</strong> fast play.</span></div>
+      <div class="bitem"><div class="dot dot-blue"></div><span><strong>Exploit:</strong> Alza la bet in bluff flop provando a giocare solo 1 streets.</span></div>
     </div>
   </div>
 </div>
