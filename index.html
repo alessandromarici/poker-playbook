@@ -176,6 +176,9 @@ tr:hover td{background:rgba(255,255,255,.015)}
 
     <div class="nav-label">4Bet+</div>
     <div class="nav-item" data-key="4bet"><span class="nav-icon">💥</span>4Bet</div>
+
+    <div class="nav-label">Sizing</div>
+    <div class="nav-item" data-key="cbet-sizing"><span class="nav-icon">📐</span>C-Bet Sizing</div>
   </nav>
 </aside>
 
@@ -202,6 +205,7 @@ tr:hover td{background:rgba(255,255,255,.015)}
     <button class="mob-btn" data-key="3b-ip-raiser"><span class="mi">🔥</span>3B IP R</button>
     <button class="mob-btn" data-key="3b-ip-caller"><span class="mi">📞</span>3B IP C</button>
     <button class="mob-btn" data-key="4bet"><span class="mi">💥</span>4Bet</button>
+    <button class="mob-btn" data-key="cbet-sizing"><span class="mi">📐</span>C-Bet Size</button>
   </div>
 </nav>
 </div>
@@ -1143,6 +1147,104 @@ player:{title:"Player HUD",tag:"READS",tagClass:"tag-blue",html:`
       <div class="rule rule-gold">Betta 3 strade → difficile farlo foldare</div>
       <div class="rule rule-green">4bet &lt;2.3% → fold tutto tranne QQ+ / AK</div>
     </div>
+  </div>
+</div>
+`},
+
+"cbet-sizing":{title:"C-Bet Sizing per Board",tag:"SIZING",tagClass:"tag-gold",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">📐</span><span class="card-head-title">Come leggere la tabella</span></div>
+  <div class="card-body">
+    <div class="blist">
+      <div class="bitem"><div class="dot dot-green"></div><span><strong>Bet 20/25/30%</strong> — range bet ad alta frequenza, board statici o con vantaggio netto.</span></div>
+      <div class="bitem"><div class="dot dot-orange"></div><span><strong>Bet 50/66/120%</strong> — strategia polarizzata, board dinamici o con meno vantaggio.</span></div>
+      <div class="bitem"><div class="dot dot-muted"></div><span><strong>Check</strong> — protezione range, board pericolosi o senza vantaggio.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">SRP — Single Raised Pot</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section"><span class="badge badge-ip">IP</span></div>
+        <div class="rules">
+          <div class="rule rule-green"><strong>Bet 20/25/30%</strong><br>Board connessi &lt;8 + mono · A Wheel (A2x–A5x)</div>
+          <div class="rule rule-muted"><strong>Check</strong><br>Board &lt;8 connected · A Wheel · Monotone · Board paired &lt;77x (442, 553, 662) · Vs Fish: check sempre con air</div>
+        </div>
+      </div>
+      <div>
+        <div class="section"><span class="badge badge-oop">OOP</span></div>
+        <div class="rules">
+          <div class="rule rule-green"><strong>Bet 20/25/30%</strong><br>Solo da Small Blind · Board favorevoli o dry</div>
+          <div class="rule rule-muted"><strong>Check</strong><br>Check always · Controllo del piatto OOP · Protezione del range</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔺</span><span class="card-head-title">3Bet Pot</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section"><span class="badge badge-ip">IP</span></div>
+        <div class="rules">
+          <div class="rule rule-green"><strong>Bet 20/25/30%</strong><br>Board KKx+ (pair alti) · Pair basso con OC K+ · Paired connesso + straight/flush · Monotone senza A · A high BRW / disconnessi · Flop connessi · 2BRW–3BRW</div>
+          <div class="rule rule-orange"><strong>Bet 50/66/120%</strong><br>Pair basso senza OC K+ · 2BR rainbow</div>
+          <div class="rule rule-muted"><strong>Check</strong><br>A monotone · A wheel</div>
+        </div>
+      </div>
+      <div>
+        <div class="section"><span class="badge badge-oop">OOP</span></div>
+        <div class="rules">
+          <div class="rule rule-green"><strong>Bet 20/25/30%</strong><br>Axx (board alti con Asso) · Monotone · BB vs BTN: Kxx · 2BRW, board dinamici</div>
+          <div class="rule rule-orange"><strong>Bet 50/66/120%</strong><br>KJx rainbow → 50% · Board bassi disconnessi → 66% · Pairati bassi → 66%</div>
+          <div class="rule rule-muted"><strong>Check</strong><br>Coordinati low · &lt;9xx connessi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">💥</span><span class="card-head-title">4Bet Pot</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section"><span class="badge badge-ip">IP</span></div>
+        <div class="rules">
+          <div class="rule rule-green"><strong>Bet 20/25/33% (Default)</strong><br>Size standard in 4bet pot · Adatto a board dry o bilanciati · Kh e Jh = value su texture coordinate</div>
+          <div class="rule rule-muted"><strong>Check</strong><br>Ah quando abbiamo l'Asso</div>
+        </div>
+      </div>
+      <div>
+        <div class="section"><span class="badge badge-oop">OOP</span></div>
+        <div class="rules">
+          <div class="rule rule-green"><strong>Bet 20/25/33% (Default)</strong><br>Stesse size IP · Gestione pot controllata OOP · Kh e Jh bettati per valore su board connessi</div>
+          <div class="rule rule-muted"><strong>Check</strong><br>Ah per protezione e deception</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">⚡</span><span class="card-head-title">Riepilogo Rapido</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Pot</th><th>Posizione</th><th>Size default</th><th>Quando alzare</th></tr></thead>
+      <tbody>
+        <tr><td>SRP</td><td><span class="badge badge-ip">IP</span></td><td class="mono">20–30%</td><td>Mai su board &lt;8 e monotone</td></tr>
+        <tr><td>SRP</td><td><span class="badge badge-oop">OOP</span></td><td class="mono">20–30%</td><td>Solo SB su board dry/favorevoli</td></tr>
+        <tr><td>3bet</td><td><span class="badge badge-ip">IP</span></td><td class="mono">20–30%</td><td>50–120% su pair basso senza OC K+</td></tr>
+        <tr><td>3bet</td><td><span class="badge badge-oop">OOP</span></td><td class="mono">20–30%</td><td>50–120% su KJx / board bassi</td></tr>
+        <tr><td>4bet</td><td><span class="badge badge-ip">IP</span></td><td class="mono">20–33%</td><td>Fisso, adatta contenuto non size</td></tr>
+        <tr><td>4bet</td><td><span class="badge badge-oop">OOP</span></td><td class="mono">20–33%</td><td>Fisso, check Ah</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `},
