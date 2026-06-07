@@ -549,12 +549,8 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
   <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia per Board</span></div>
   <div class="card-body">
     <div class="board-grid">
-      <div class="bc"><div class="bc-title">High (Kxx, Qxx)</div><ul><li>C-bet frequente</li><li>Check back: mani medie / no backdoor</li><li>Su Ahigh: cbet molto meno</li></ul></div>
-      <div class="bc"><div class="bc-title">Low (8-high o meno)</div><ul><li>GTO: check quasi 100%</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired</div><ul><li>High paired: cbet ~100% small, meglio rainbow</li><li>Low paired: più check</li></ul></div>
-      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Check frequente con FD medi</li><li>Bet con FD bassi/forti</li><li>Turn 4-flush → blockbet protezione</li></ul></div>
-      <div class="bc"><div class="bc-title">Coordinati (QJ8, 987)</div><ul><li>Cbet meno spesso, size grande</li><li>QQ–TT → bet protezione</li><li>AA/KK → trap mix</li><li>XR → Set/combo draw per punire bet</li></ul></div>
-      <div class="bc"><div class="bc-title">Middle (T98, 976)</div><ul><li>Favoriscono BB</li><li>Gioco più passivo</li><li>Value forte (TwoPair+, OESD) → linea polarizzata</li></ul></div>
+      <div class="bc"><div class="bc-title">C-bet 25%</div><ul><li>High (Kxx, Qxx); DRY favorevoli</li><li>Su Ahigh: cbet molto meno</li></ul></div>
+      <div class="bc"><div class="bc-title">Check always e controllo</div><ul><li>Low (8-high o meno)</li><li>A mono; Paired bassi; board sfavorevoli</ul></div>      
     </div>
   </div>
 </div>
@@ -624,12 +620,9 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
   <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia per Board</span></div>
   <div class="card-body">
     <div class="board-grid">
-      <div class="bc"><div class="bc-title">Dry (Axx, Kxx)</div><ul><li>Difesa passiva (advantage oppo)</li><li>XC: TP medio + BDFD / OC+BD</li><li>Vs REG: XR value forte per protezione e bluff draw no VSD su size piccole</li><li>Vs FISH: overfold vs size grandi (&gt;75%)</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired High (AAx, KKx)</div><ul><li>Check range</li><li>Call coppie medie / Ah raro</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired Low (88x-)</div><ul><li>BB ha nut advantage</li><li>XR ~30%: Trips, coppie vulnerabili + bluff scala BDFD x2.5</li></ul></div>
-      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Call con value. Senza draw forte → fold vs size grandi</li><li>XR con draw bassi, no VSD x2.5</li></ul></div>
-      <div class="bc"><div class="bc-title">Coordinati / Draw-heavy</div><ul><li>FD → call medio, XR low/high polar x4.5</li><li>OESD → mix call / raise</li><li>Value SD: pot control fino al river</li><li>Two pair vulnerabili su WET → call</li></ul></div>
-      <div class="bc"><div class="bc-title">Low (642, 753)</div><ul><li>Favoriscono BB</li><li>XR: OP basse, mani medie (55–88), double GS e combo draw x4.5</li></ul></div>
+      <div class="bc"><div class="bc-title">Sfavorevoli (2BRW)</div><ul><li>Call: TP medio/MP + BDFD / OC+BD</li><li>XR: Value forte; draw tanta equity</li></ul></div>
+      <div class="bc"><div class="bc-title">Favorevoli (Piared bassi/Low)</div><ul><li>Call: Value SD; draw medio</li><li>XR: Set; coppie vulnerabili; combo draw</ul></div>
+        <div class="bc"><div class="bc-title">Mono/coordinati</div><ul><li>Call: Value SD; draw medio</li><li>XR mono: Draw bassi; XR coor: Draw/combo draw h/l; TWOPAIR+</ul></div>       
     </div>
   </div>
 </div>
@@ -693,13 +686,8 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
   <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia per Board</span></div>
   <div class="card-body">
     <div class="board-grid">
-      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><div class="bc-sub">Size: 25–33% · Freq: 70–100%</div><ul><li>Value + bluff backdoor</li><li>Check: aria senza backdoor</li></ul></div>
-      <div class="bc"><div class="bc-title">Low (742r)</div><div class="bc-sub">Size: 50–75% · Freq: 30–40%</div><ul><li>Check molto → BB advantage</li><li>Bet forte: overpair + draw forti</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired High (KKx)</div><div class="bc-sub">Size: 25–33% · Freq: 100%</div><ul><li>Range bet totale</li><li>BB overfolda → barrel turn/river</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired Low (88x)</div><div class="bc-sub">Size: 33% · Freq: ~50%</div><ul><li>Check back: AA/KK e trips deboli</li></ul></div>
-      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Check frequente</li><li>Check back flush bassi</li><li>Turn 4-flush → bet flush medi+</li></ul></div>
-      <div class="bc"><div class="bc-title">Coordinati (J86, 987)</div><div class="bc-sub">Size: 55–80% · Freq: 40–50%</div><ul><li>Strategia polarizzata</li><li>Check alcune overpair vulnerabili</li></ul></div>
-      <div class="bc"><div class="bc-title">Middle (T95, 976)</div><ul><li>Favoriscono BB</li><li>Check più spesso AA che QQ</li></ul></div>
+      <div class="bc"><div class="bc-title">Favorevoli</div><div class="bc-sub">Size: 25–33% · Freq: 100%</div><ul><li>Always</li><li>Check: aria vs fish</li></ul></div>
+      <div class="bc"><div class="bc-title">Sfavorevoli</div><ul><li>Check molto → BB advantage</li><li>low <8 no mono; pairati bassi; A Wheel</li></ul></div>      
     </div>
   </div>
 </div>
@@ -758,14 +746,10 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
   <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop per Board</span></div>
   <div class="card-body">
     <div class="board-grid">
-      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><div class="bc-sub">Freq: 80–100% · Size: 15–25%</div><ul><li>Range bet quasi totale</li></ul></div>
-      <div class="bc"><div class="bc-title">Double Broadway (KQx, QJx)</div><div class="bc-sub">Freq: 100% · Size: 33%</div><ul><li>Range advantage netto</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired High (AAx, KKx)</div><div class="bc-sub">Freq: ~100% · Size: 25–33%</div><ul><li>Range bet alta frequenza</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired Low (88x-)</div><div class="bc-sub">Freq: ~50%</div><ul><li>Mix check/bet</li><li>IP ha più trips</li></ul></div>
-      <div class="bc"><div class="bc-title">Low (832, 742)</div><div class="bc-sub">Freq: 30–40% · Size: 33%</div><ul><li>Bet: 99–QQ</li><li>Check: AA/KK (protezione)</li></ul></div>
-      <div class="bc"><div class="bc-title">Coordinati (JT9, 987)</div><div class="bc-sub">Size: 66–100%</div><ul><li>Strategia polarizzata</li><li>Checka AA/KK BDFD</li><li>XR solo nuts</li></ul></div>
-      <div class="bc"><div class="bc-title">Monotone</div><div class="bc-sub">Freq: bassa · Size: 25–33%</div><ul><li>Check anche flush (protezione)</li></ul></div>
-      <div class="bc"><div class="bc-title">Middle (975, 864)</div><ul><li>Favoriscono IP</li><li>Check AA/KK più spesso di JJ</li></ul></div>
+      <div class="bc"><div class="bc-title">Bet 25%</div><ul><li> High (Axx, Kxx, 2BRW)</li><li> Mono e coordinati alti/medi</li></ul></div>
+      <div class="bc"><div class="bc-title">Bet 50%</div><ul><li> KJx rainbow; low disconnessi</li></ul></div>
+      <div class="bc"><div class="bc-title">Bet 66%</div><ul><li> Pair low</li></ul></div>
+      <div class="bc"><div class="bc-title">Check</div><ul><li> Coordinati low</li></ul></div> <!-- Corretto anche il typo "Corrdinati" -->
     </div>
   </div>
 </div>
@@ -811,15 +795,11 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
 </div>
 
 <div class="card">
-  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop: Check 100% Range</span></div>
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop per Board</span></div>
   <div class="card-body">
     <div class="board-grid">
-      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><ul><li>Check-fold / call stretto</li><li>Continua con TP e value + BDFD</li></ul></div>
-      <div class="bc"><div class="bc-title">Low (753, 642)</div><ul><li>Nut advantage OOP</li><li>Check-raise aggressivo</li><li>SET/doppia + draw forti</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired Low (774, 552)</div><ul><li>Mix call / raise</li><li>Difendi draw forti+</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired High (AAx/KKx)</div><ul><li>Call selettivo</li><li>Fold broadway missate e pocket basse</li></ul></div>
-      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Fold vs size grandi senza FD</li><li>Call FD nut / medi</li></ul></div>
-      <div class="bc"><div class="bc-title">Middle (T85, 976)</div><ul><li>Difesa aggressiva</li><li>XR con draw forti e set</li></ul></div>
+      <div class="bc"><div class="bc-title">Sfavoreli</div><ul><li> Call TP e value BDFD</li><li>Paired alti: fold pocket e missati</ul></div>
+      <div class="bc"><div class="bc-title">Favorevoli</div><ul><li> Xr aggro doppia+; draw forti</li></ul></div>      
     </div>
   </div>
 </div>
@@ -863,16 +843,12 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
 </div>
 
 <div class="card">
-  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop</span></div>
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop per Board</span></div>
   <div class="card-body">
     <div class="board-grid">
-      <div class="bc"><div class="bc-title">High (Axx, Kxx)</div><div class="bc-sub">Size: 25–33% · Freq: 95–100%</div><ul><li>Range bet quasi totale</li></ul></div>
-      <div class="bc"><div class="bc-title">Low (raggy)</div><div class="bc-sub">Size: 25–33% · Freq: bassa/media</div><ul><li>Bet: 99–JJ (protezione)</li><li>Check: AA/KK (induzione)</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired High</div><div class="bc-sub">Size: 25–33% · Freq: 100%</div><ul><li>Range bet totale</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired Low</div><div class="bc-sub">Size: 25–33% · Freq: media</div><ul><li>Bet: Trip deboli + OP in mix</li></ul></div>
-      <div class="bc"><div class="bc-title">Coordinati (JT9, 987)</div><div class="bc-sub">Size: 33–50% · Freq: ~80%</div><ul><li>Bet: draw + TP forte</li></ul></div>
-      <div class="bc"><div class="bc-title">Monotone</div><div class="bc-sub">Freq: bassa</div><ul><li>Size: 33% o check</li><li>Check: flush bassi</li></ul></div>
-      <div class="bc"><div class="bc-title">Middle (T85, 976)</div><div class="bc-sub">Size: ~50% · Freq: media</div><ul><li>Proteggi equity vs OC</li></ul></div>
+      <div class="bc"><div class="bc-title">Bet 25%</div><ul><li> Default</li></ul></div>
+      <div class="bc"><div class="bc-title">Bet 50%</div><ul><li> Pair medi/bassi senza K+</li><li> 2BRW</li></ul></div>
+      <div class="bc"><div class="bc-title">Check</div><ul><li> A mono</li><li> A Wheel</li></ul></div> 
     </div>
   </div>
 </div>
@@ -948,13 +924,11 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
   <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop</span></div>
   <div class="card-body">
     <div class="board-grid">
-      <div class="bc"><div class="bc-title">High Dry (Axx, Kxx)</div><ul><li>Call largo vs size piccole</li><li>Difendi: coppie, GS, A/K high</li></ul></div>
-      <div class="bc"><div class="bc-title">Low (753, 642)</div><ul><li>Favoriscono IP</li><li>Raise: TP forte / overpair vs bet small</li><li>Call: underpair + backdoor</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired High (AAx, KKx)</div><ul><li>Call passivo</li><li>Fold aria senza equity</li><li>Raise quasi mai</li></ul></div>
-      <div class="bc"><div class="bc-title">Paired Low (774, 552)</div><ul><li>IP ha più trips</li><li>Aggressione maggiore</li><li>Difendi overcard + backdoor FD</li></ul></div>
-      <div class="bc"><div class="bc-title">Coordinati (JT9, 987)</div><ul><li>Mix call / raise</li><li>Raise: combo-draw forti</li><li>Call: TP + equity</li><li>Check back mani forti vs check</li></ul></div>
-      <div class="bc"><div class="bc-title">Middle (T85, 976)</div><ul><li>Call con coppie medie</li><li>Rivaluta turn</li></ul></div>
-      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Fold selettivo vs size grandi</li><li>Call flush piccoli per indurre bluff</li></ul></div>
+      <div class="bc"><div class="bc-title">Sfavorevoli</div><ul><li>Call: Value + equity</li><li>Difendi: coppie, GS, A/K high</li></ul></div>
+      <div class="bc"><div class="bc-title">Favorevoli low</div><ul><li>Raise: TP forte / overpair vs bet small</li><li>Call: underpair + backdoor</li></ul></div>
+      <div class="bc"><div class="bc-title">Paired Low (774, 552)</div><ul><li>Difendi overcard + backdoor FD</li></ul></div>
+      <div class="bc"><div class="bc-title">Coordinati (JT9, 987)</div><ul><li>Raise: combo-draw forti</li><li>Call: TP + equity</li><li>Check back mani forti vs check</li></ul></div>
+      <div class="bc"><div class="bc-title">Monotone</div><ul><li>Call flush piccoli per indurre bluff</li></ul></div>
     </div>
   </div>
 </div>
@@ -1049,6 +1023,16 @@ multy:{title:"Multiway",tag:"GENERALE",tagClass:"tag-blue",html:`
           <div class="bitem"><div class="dot dot-red"></div><span>NO trash senza blocker.</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🃏</span><span class="card-head-title">Strategia Flop</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">C-Bet 20%</div><ul><li>Default</li></ul></div>
+      <div class="bc"><div class="bc-title">Check IP</div><ul><li>Ah quando abbiamo Asso</li><li>A low</li></ul></div> <div class="bc"><div class="bc-title">Check OOP</div><ul><li>Ah per protezione</li></ul></div>      
     </div>
   </div>
 </div>
