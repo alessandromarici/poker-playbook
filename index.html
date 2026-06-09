@@ -62,6 +62,7 @@ a{text-decoration:none;color:inherit}
 .tag-blue{background:var(--blue-d);border-color:rgba(77,166,255,.3);color:var(--blue)}
 .tag-orange{background:var(--orange-d);border-color:rgba(255,122,69,.3);color:var(--orange)}
 .tag-gold{background:var(--gold-d);border-color:rgba(255,201,77,.3);color:var(--gold)}
+.tag-green{background:var(--green-d);border-color:rgba(61,220,132,.3);color:var(--green)}
 
 /* CONTENT */
 .content{padding:20px 24px;max-width:900px}
@@ -159,6 +160,7 @@ tr:hover td{background:rgba(255,255,255,.015)}
   <nav class="nav" id="snav">
     <div class="nav-label">Base</div>
     <div class="nav-item active" data-key="regole"><span class="nav-icon">📜</span>Regole Generali</div>
+    <div class="nav-item" data-key="studio-cash"><span class="nav-icon">📈</span>Studio 4W</div>
     <div class="nav-item" data-key="multy"><span class="nav-icon">👥</span>Multiway</div>
     <div class="nav-item" data-key="player"><span class="nav-icon">🎯</span>Player HUD</div>
     <div class="nav-item" data-key="board"><span class="nav-icon">🃏</span>Board Types</div>
@@ -194,6 +196,7 @@ tr:hover td{background:rgba(255,255,255,.015)}
 <nav class="mob-nav">
   <div class="mob-nav-inner" id="mnav">
     <button class="mob-btn active" data-key="regole"><span class="mi">📜</span>Regole</button>
+    <button class="mob-btn" data-key="studio-cash"><span class="mi">📈</span>Studio 4W</button>
     <button class="mob-btn" data-key="multy"><span class="mi">👥</span>Multi</button>
     <button class="mob-btn" data-key="player"><span class="mi">🎯</span>HUD</button>
     <button class="mob-btn" data-key="board"><span class="mi">🃏</span>Board</button>
@@ -417,6 +420,98 @@ regole:{title:"Regole Generali",tag:"GENERALE",tagClass:"tag-blue",html:`
         <tr><td>Air OOP</td><td class="mono">X → 66 → 66</td></tr>
         <tr><td>Draw OOP</td><td class="mono">33 → 150</td></tr>
         <tr><td>Draw Nut OOP</td><td class="mono">X5 → 100 → 150</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`},
+
+ "studio-cash":{title:"Studio Cash Online 4W",tag:"STUDIO",tagClass:"tag-green",html:`
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">📈</span><span class="card-head-title">Obiettivo del blocco</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule rule-green"><strong>Focus 4 settimane:</strong> recuperare iniziativa da PFR su flop e turn IP.</div>
+      <div class="rule"><strong>Leak da attaccare:</strong> c-bet flop sotto target, turn c-bet IP troppo bassa, non-showdown negativo.</div>
+      <div class="rule rule-gold"><strong>Target iniziale:</strong> Flop CBet 50-55% HU, Turn CBet IP 40-45%, W$WSF in salita.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🗓️</span><span class="card-head-title">Routine settimanale</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Momento</th><th>Azione</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">Pre-sessione</td><td>10 minuti su 3 texture: dry A/K high, paired, connessa/twotone.</td><td>Decidi size default e mani da barrelare.</td></tr>
+        <tr><td class="mono">Gioco</td><td>Marca solo spot in cui sei PFR e arrivi flop o turn.</td><td>10 mani PFR flop/turn per review.</td></tr>
+        <tr><td class="mono">Post-sessione</td><td>Classifica ogni mano marcata.</td><td>C-bet obbligatoria, check corretto, barrel turn mancato, give-up corretto.</td></tr>
+        <tr><td class="mono">Fine settimana</td><td>Rivedi le 30 mani marcate e le stat principali.</td><td>Un solo aggiustamento per la settimana dopo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🎯</span><span class="card-head-title">Flop C-Bet Online</span></div>
+  <div class="card-body">
+    <div class="two-col">
+      <div>
+        <div class="section">Aumenta frequenza</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-green"></div><span>A/K high dry, paired e board statici dove hai range advantage.</span></div>
+          <div class="bitem"><div class="dot dot-green"></div><span>HU contro player con Fold to CBet alto: bet piccola e pressione immediata.</span></div>
+          <div class="bitem"><div class="dot dot-green"></div><span>Value, overcard + backdoor, gutshot + backdoor, blocker buoni.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section">Riduci frequenza</div>
+        <div class="blist">
+          <div class="bitem"><div class="dot dot-red"></div><span>Board molto connessi o monotone senza equity chiara.</span></div>
+          <div class="bitem"><div class="dot dot-red"></div><span>Multiway o texture dove il caller ha vantaggio di range/nuts.</span></div>
+          <div class="bitem"><div class="dot dot-red"></div><span>Air senza backdoor contro calling station o regular che non foldano flop.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🔄</span><span class="card-head-title">Turn IP dopo C-Bet Flop</span></div>
+  <div class="card-body">
+    <div class="rules">
+      <div class="rule rule-green">Barrel di default quando il turn migliora il tuo range percepito: A/K/Q, overcard favorevole, carta che completa pressione credibile.</div>
+      <div class="rule">Barrel con equity o blocker: flush draw, open-ended, gutshot + overcard, blocker a top pair o nuts.</div>
+      <div class="rule rule-orange">Check back solo con ragione precisa: showdown value fragile, texture peggiorata, villain che check-raise troppo, o piano di call river.</div>
+      <div class="rule rule-red">Errore da eliminare: check turn IP per abitudine dopo una c-bet flop chiamata.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">🧩</span><span class="card-head-title">Exploit Pool Online</span></div>
+  <div class="card-body">
+    <div class="board-grid">
+      <div class="bc"><div class="bc-title">Fold to CBet alto</div><ul><li>C-bet piccola piu spesso</li><li>Stab immediato su board dry</li><li>Taglia slowplay inutili</li></ul></div>
+      <div class="bc"><div class="bc-title">Fold to Turn alto</div><ul><li>Second barrel con equity</li><li>Usa blocker su scare card</li><li>Size 50-75% quando polarizzi</li></ul></div>
+      <div class="bc"><div class="bc-title">Calling Station</div><ul><li>Meno bluff puri</li><li>Value bet piu thin</li><li>Size piu grande con top pair+</li></ul></div>
+      <div class="bc"><div class="bc-title">Reg probe-heavy</div><ul><li>Proteggi check flop</li><li>Check-call con SD value</li><li>Trap selettive su texture sicure</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><span class="card-head-icon">✅</span><span class="card-head-title">Review e Target</span></div>
+  <div class="card-body">
+    <table>
+      <thead><tr><th>Stat / spot</th><th>Target</th><th>Domanda review</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">Flop CBet HU</td><td>50-55% minimo</td><td>Ho checkato per texture/range o per passivita?</td></tr>
+        <tr><td class="mono">Turn CBet IP</td><td>40-45% primo step</td><td>Il turn era una carta buona da barrelare?</td></tr>
+        <tr><td class="mono">W$WSF</td><td>Trend in salita</td><td>Sto vincendo piu pot senza showdown?</td></tr>
+        <tr><td class="mono">Net Won w/o SD</td><td>Perdita ridotta</td><td>Sto cedendo meno iniziativa flop/turn?</td></tr>
+        <tr><td class="mono">10 mani PFR</td><td>Ogni sessione</td><td>Ogni check ha una ragione scritta?</td></tr>
       </tbody>
     </table>
   </div>
